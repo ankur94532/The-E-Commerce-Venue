@@ -22,17 +22,17 @@ const Orders = () => {
   }, [auth?.token]);
   return (
     <Layout title={"Your Orders"}>
-      <div className="container-flui p-3 m-3 dashboard">
-        <div className="row">
-          <div className="col-md-3">
+      <div className="container-flui p-3 m-3 dashboard col-xs-12">
+        <div className="row col-xs-12">
+          <div className="col-md-3 col-xs-12">
             <UserMenu />
           </div>
-          <div className="col-md-9">
-            <h1 className="text-center">All Orders</h1>
+          <div className="col-md-9 col-xs-12">
+            <h1 className="text-center col-xs-12">All Orders</h1>
             {orders?.map((o, i) => {
               return (
-                <div className="border shadow">
-                  <table className="table">
+                <div className="border shadow col-xs-12">
+                  <table className="table col-xs-12">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
@@ -54,19 +54,19 @@ const Orders = () => {
                       </tr>
                     </tbody>
                   </table>
-                  <div className="container">
+                  <div className="container col-xs-12">
                     {o?.products?.map((p, i) => (
-                      <div className="row mb-2 p-3 card flex-row" key={p._id}>
-                        <div className="col-md-4">
+                      <div className="row mb-2 p-3 card flex-row col-xs-12" key={p._id}>
+                        <div className="col-md-4 col-xs-12">
                           <img
                             src={`/api/v1/product/product-photo/${p._id}`}
-                            className="card-img-top"
+                            className="card-img-top col-xs-12"
                             alt={p.name}
                             width="100px"
                             height={"100px"}
                           />
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-8 col-xs-12">
                           <p>{p.name}</p>
                           <p>{p.description.substring(0, 30)}</p>
                           <p>Price : {p.price}</p>

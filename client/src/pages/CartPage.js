@@ -79,14 +79,14 @@ const CartPage = () => {
   };
   return (
     <Layout>
-      <div className=" cart-page">
-        <div className="row">
-          <div className="col-md-12">
-            <h1 className="text-center bg-light p-2 mb-1">
+      <div className=" cart-page col-xs-12">
+        <div className="row col-xs-12">
+          <div className="col-md-12 col-xs-12">
+            <h1 className="text-center bg-light p-2 mb-1 col-xs-12">
               {!auth?.user
                 ? "Hello Guest"
                 : `Hello  ${auth?.token && auth?.user?.name}`}
-              <p className="text-center">
+              <p className="text-center col-xs-12">
                 {cart?.length
                   ? `You Have ${cart.length} items in your cart ${
                       auth?.token ? "" : "please login to checkout !"
@@ -96,28 +96,28 @@ const CartPage = () => {
             </h1>
           </div>
         </div>
-        <div className="container ">
-          <div className="row ">
-            <div className="col-md-7  p-0 m-0">
+        <div className="container col-xs-12">
+          <div className="row col-xs-12">
+            <div className="col-md-7  p-0 m-0 col-xs-12">
               {cart?.map((p) => (
-                <div className="row card flex-row" key={p._id}>
-                  <div className="col-md-4">
+                <div className="row card flex-row col-xs-12" key={p._id}>
+                  <div className="col-md-4 col-xs-12">
                     <img
                       src={`/api/v1/product/product-photo/${p._id}`}
-                      className="card-img-top"
+                      className="card-img-top col-xs-12"
                       alt={p.name}
                       width="100%"
                       height={"130px"}
                     />
                   </div>
-                  <div className="col-md-4">
+                  <div className="col-md-4 col-xs-12">
                     <p>{p.name}</p>
                     <p>{p.description.substring(0, 30)}</p>
                     <p>Price : {p.price}</p>
                   </div>
-                  <div className="col-md-4 cart-remove-btn">
+                  <div className="col-md-4 cart-remove-btn col-xs-12">
                     <button
-                      className="btn btn-danger"
+                      className="btn btn-danger col-xs-12"
                       onClick={() => removeCartItem(p._id)}
                     >
                       Remove
@@ -126,18 +126,18 @@ const CartPage = () => {
                 </div>
               ))}
             </div>
-            <div className="col-md-5 cart-summary ">
+            <div className="col-md-5 cart-summary col-xs-12">
               <h2>Cart Summary</h2>
               <p>Total | Checkout | Payment</p>
               <hr />
               <h4>Total : {totalPrice()} </h4>
               {auth?.user?.address ? (
                 <>
-                  <div className="mb-3">
+                  <div className="mb-3 col-xs-12">
                     <h4>Current Address</h4>
                     <h5>{auth?.user?.address}</h5>
                     <button
-                      className="btn btn-outline-warning"
+                      className="btn btn-outline-warning col-xs-12"
                       onClick={() => navigate("/dashboard/user/profile")}
                     >
                       Update Address
@@ -145,17 +145,17 @@ const CartPage = () => {
                   </div>
                 </>
               ) : (
-                <div className="mb-3">
+                <div className="mb-3 col-xs-12">
                   {auth?.token ? (
                     <button
-                      className="btn btn-outline-warning"
+                      className="btn btn-outline-warning col-xs-12"
                       onClick={() => navigate("/dashboard/user/profile")}
                     >
                       Update Address
                     </button>
                   ) : (
                     <button
-                      className="btn btn-outline-warning"
+                      className="btn btn-outline-warning col-xs-12"
                       onClick={() =>
                         navigate("/login", {
                           state: "/cart",
@@ -167,7 +167,7 @@ const CartPage = () => {
                   )}
                 </div>
               )}
-              <div className="mt-2">
+              <div className="mt-2 col-xs-12">
                 {!clientToken || !auth?.token || !cart?.length ? (
                   ""
                 ) : (
@@ -183,7 +183,7 @@ const CartPage = () => {
                     />
 
                     <button
-                      className="btn btn-primary"
+                      className="btn btn-primary col-xs-12"
                       onClick={handlePayment}
                       disabled={loading || !instance || !auth?.user?.address}
                     >

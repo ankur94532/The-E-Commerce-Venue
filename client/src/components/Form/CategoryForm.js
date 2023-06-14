@@ -4,17 +4,17 @@ const CategoryForm = ({ handleSubmit, value, setValue }) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div className="mb-3">
+        <div className="mb-3 col-xs-12">
           <input
             type="text"
-            className="form-control"
+            className="form-control col-xs-12"
             placeholder="Enter new category"
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary col-xs-12">
           Submit
         </button>
       </form>

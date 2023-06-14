@@ -103,20 +103,20 @@ const UpdateProduct = () => {
   };
   return (
     <Layout title={"Dashboard - Create Product"}>
-      <div className="container-fluid m-3 p-3">
-        <div className="row">
-          <div className="col-md-3">
+      <div className="container-fluid m-3 p-3 col-xs-12">
+        <div className="row col-xs-12">
+          <div className="col-md-3 col-xs-12">
             <AdminMenu />
           </div>
-          <div className="col-md-9">
+          <div className="col-md-9 col-xs-12">
             <h1>Update Product</h1>
-            <div className="m-1 w-75">
+            <div className="m-1 w-75 col-xs-12">
               <Select
                 bordered={false}
                 placeholder="Select a category"
                 size="large"
                 showSearch
-                className="form-select mb-3"
+                className="form-select mb-3 col-xs-12"
                 onChange={(value) => {
                   setCategory(value);
                 }}
@@ -128,8 +128,8 @@ const UpdateProduct = () => {
                   </Option>
                 ))}
               </Select>
-              <div className="mb-3">
-                <label className="btn btn-outline-secondary col-md-12">
+              <div className="mb-3 col-xs-12">
+                <label className="btn btn-outline-secondary col-md-12 col-xs-12">
                   {photo ? photo.name : "Upload Photo"}
                   <input
                     type="file"
@@ -140,71 +140,71 @@ const UpdateProduct = () => {
                   />
                 </label>
               </div>
-              <div className="mb-3">
+              <div className="mb-3 col-xs-12">
                 {photo ? (
-                  <div className="text-center">
+                  <div className="text-center col-xs-12">
                     <img
                       src={URL.createObjectURL(photo)}
                       alt="product_photo"
                       height={"200px"}
-                      className="img img-responsive"
+                      className="img img-responsive col-xs-12"
                     />
                   </div>
                 ) : (
-                  <div className="text-center">
+                  <div className="text-center col-xs-12">
                     <img
                       src={`/api/v1/product/product-photo/${id}`}
                       alt="product_photo"
                       height={"200px"}
-                      className="img img-responsive"
+                      className="img img-responsive col-xs-12"
                     />
                   </div>
                 )}
               </div>
-              <div className="mb-3">
+              <div className="mb-3 col-xs-12">
                 <input
                   type="text"
                   value={name}
                   placeholder="write a name"
-                  className="form-control"
+                  className="form-control col-xs-12"
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
-              <div className="mb-3">
+              <div className="mb-3 col-xs-12">
                 <textarea
                   type="text"
                   value={description}
                   placeholder="write a description"
-                  className="form-control"
+                  className="form-control col-xs-12"
                   onChange={(e) => setDescription(e.target.value)}
                 />
               </div>
 
-              <div className="mb-3">
+              <div className="mb-3 col-xs-12">
                 <input
                   type="number"
                   value={price}
                   placeholder="write a Price"
-                  className="form-control"
+                  className="form-control col-xs-12"
                   onChange={(e) => setPrice(e.target.value)}
                 />
               </div>
-              <div className="mb-3">
+              <div className="mb-3 col-xs-12">
                 <input
                   type="number"
                   value={quantity}
                   placeholder="write a quantity"
-                  className="form-control"
+                  className="form-control col-xs-12"
                   onChange={(e) => setQuantity(e.target.value)}
                 />
               </div>
-              <div className="mb-3">
+              <div className="mb-3 col-xs-12">
                 <Select
                   bordered={false}
                   placeholder="Select Shipping "
                   size="large"
                   showSearch
-                  className="form-select mb-3"
+                  className="form-select mb-3 col-xs-12"
                   onChange={(value) => {
                     setShipping(value);
                   }}
@@ -214,13 +214,13 @@ const UpdateProduct = () => {
                   <Option value="1">Yes</Option>
                 </Select>
               </div>
-              <div className="mb-3">
-                <button className="btn btn-primary" onClick={handleUpdate}>
+              <div className="mb-3 col-xs-12">
+                <button className="btn btn-primary col-xs-12" onClick={handleUpdate}>
                   UPDATE PRODUCT
                 </button>
               </div>
-              <div className="mb-3">
-                <button className="btn btn-danger" onClick={handleDelete}>
+              <div className="mb-3 col-xs-12">
+                <button className="btn btn-danger col-xs-12" onClick={handleDelete}>
                   DELETE PRODUCT
                 </button>
               </div>

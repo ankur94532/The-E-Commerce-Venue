@@ -26,35 +26,35 @@ const CategoryProduct = () => {
 
   return (
     <Layout>
-      <div className="container mt-3 category">
-        <h4 className="text-center">Category - {category?.name}</h4>
-        <h6 className="text-center">{products?.length} result found </h6>
-        <div className="row">
-          <div className="col-md-9 offset-1">
-            <div className="d-flex flex-wrap">
+      <div className="container mt-3 category col-xs-12">
+        <h4 className="text-center col-xs-12">Category - {category?.name}</h4>
+        <h6 className="text-center col-xs-12">{products?.length} result found </h6>
+        <div className="row col-xs-12">
+          <div className="col-md-9 offset-1 col-xs-12">
+            <div className="d-flex flex-wrap col-xs-12">
               {products?.map((p) => (
-                <div className="card m-2" key={p._id}>
+                <div className="card m-2 col-xs-12" key={p._id}>
                   <img
                     src={`/api/v1/product/product-photo/${p._id}`}
-                    className="card-img-top"
+                    className="card-img-top col-xs-12"
                     alt={p.name}
                   />
-                  <div className="card-body">
-                    <div className="card-name-price">
-                      <h5 className="card-title">{p.name}</h5>
-                      <h5 className="card-title card-price">
+                  <div className="card-body col-xs-12">
+                    <div className="card-name-price col-xs-12">
+                      <h5 className="card-title col-xs-12">{p.name}</h5>
+                      <h5 className="card-title card-price col-xs-12">
                         {p.price.toLocaleString("en-US", {
                           style: "currency",
                           currency: "USD",
                         })}
                       </h5>
                     </div>
-                    <p className="card-text ">
+                    <p className="card-text col-xs-12">
                       {p.description.substring(0, 60)}...
                     </p>
-                    <div className="card-name-price">
+                    <div className="card-name-price col-xs-12">
                       <button
-                        className="btn btn-info ms-1"
+                        className="btn btn-info ms-1 col-xs-12"
                         onClick={() => navigate(`/product/${p.slug}`)}
                       >
                         More Details

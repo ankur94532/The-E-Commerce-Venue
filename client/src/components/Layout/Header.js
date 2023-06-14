@@ -22,10 +22,10 @@ const Header = () => {
   };
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-        <div className="container-fluid">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top col-xs-12">
+        <div className="container-fluid col-xs-12">
           <button
-            className="navbar-toggler"
+            className="navbar-toggler col-xs-12"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarTogglerDemo01"
@@ -33,37 +33,37 @@ const Header = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon" />
+            <span className="navbar-toggler-icon col-xs-12" />
           </button>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <Link to="/" className="navbar-brand">
+          <div className="collapse navbar-collapse col-xs-12" id="navbarTogglerDemo01">
+            <Link to="/" className="navbar-brand col-xs-12">
               🛒 Ecommerce App
             </Link>
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 col-xs-12">
               <SearchInput />
-              <li className="nav-item">
-                <NavLink to="/" className="nav-link ">
+              <li className="nav-item col-xs-12">
+                <NavLink to="/" className="nav-link col-xs-12">
                   Home
                 </NavLink>
               </li>
-              <li className="nav-item dropdown">
+              <li className="nav-item dropdown col-xs-12">
                 <Link
-                  className="nav-link dropdown-toggle"
+                  className="nav-link dropdown-toggle col-xs-12"
                   to={"/categories"}
                   data-bs-toggle="dropdown"
                 >
                   Categories
                 </Link>
-                <ul className="dropdown-menu">
+                <ul className="dropdown-menu col-xs-12">
                   <li>
-                    <Link className="dropdown-item" to={"/categories"}>
+                    <Link className="dropdown-item col-xs-12" to={"/categories"}>
                       All Categories
                     </Link>
                   </li>
                   {categories?.map((c) => (
                     <li>
                       <Link
-                        className="dropdown-item"
+                        className="dropdown-item col-xs-12"
                         to={`/category/${c.slug}`}
                       >
                         {c.name}
@@ -75,22 +75,22 @@ const Header = () => {
 
               {!auth?.user ? (
                 <>
-                  <li className="nav-item">
-                    <NavLink to="/register" className="nav-link">
+                  <li className="nav-item col-xs-12">
+                    <NavLink to="/register" className="nav-link col-xs-12">
                       Register
                     </NavLink>
                   </li>
-                  <li className="nav-item">
-                    <NavLink to="/login" className="nav-link">
+                  <li className="nav-item col-xs-12">
+                    <NavLink to="/login" className="nav-link col-xs-12">
                       Login
                     </NavLink>
                   </li>
                 </>
               ) : (
                 <>
-                  <li className="nav-item dropdown">
+                  <li className="nav-item dropdown col-xs-12">
                     <NavLink
-                      className="nav-link dropdown-toggle"
+                      className="nav-link dropdown-toggle col-xs-12"
                       href="#"
                       role="button"
                       data-bs-toggle="dropdown"
@@ -98,13 +98,13 @@ const Header = () => {
                     >
                       {auth?.user?.name}
                     </NavLink>
-                    <ul className="dropdown-menu">
+                    <ul className="dropdown-menu col-xs-12">
                       <li>
                         <NavLink
                           to={`/dashboard/${
                             auth?.user?.role === 1 ? "admin" : "user"
                           }`}
-                          className="dropdown-item"
+                          className="dropdown-item col-xs-12"
                         >
                           Dashboard
                         </NavLink>
@@ -113,7 +113,7 @@ const Header = () => {
                         <NavLink
                           onClick={handleLogout}
                           to="/login"
-                          className="dropdown-item"
+                          className="dropdown-item col-xs-12"
                         >
                           Logout
                         </NavLink>
@@ -122,8 +122,8 @@ const Header = () => {
                   </li>
                 </>
               )}
-              <li className="nav-item">
-                <NavLink to="/cart" className="nav-link">
+              <li className="nav-item col-xs-12">
+                <NavLink to="/cart" className="nav-link col-xs-12">
                   <Badge count={cart?.length} showZero offset={[10, -5]}>
                     Cart
                   </Badge>
