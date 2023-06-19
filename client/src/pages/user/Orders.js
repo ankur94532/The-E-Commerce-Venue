@@ -11,7 +11,20 @@ const Orders = () => {
   const getOrders = async () => {
     try {
       const { data } = await axios.get("/api/v1/auth/orders");
+      console.log(data);
+      for (let i = 0; i < data.length; i++) {
+        // data[i].createdAt = moment(data[i].createdAt).format("MMMM Do YYYY");
+        // convert to ist and then format it to date and time
+        data[i].createdAt = moment(data[i].createdAt)
+          .utcOffset("+05:30")
+          .format("MMMM Do YYYY, h:mm:ss a");
+
+        // also add time at the end
+      }
+      console.log(data);
       setOrders(data);
+
+
     } catch (error) {
       console.log(error);
     }
@@ -48,7 +61,7 @@ const Orders = () => {
                         <td>{i + 1}</td>
                         <td>{o?.status}</td>
                         <td>{o?.buyer?.name}</td>
-                        <td>{moment(o?.createAt).fromNow()}</td>
+                        <td>{o?.createdAt}</td>
                         <td>{o?.payment.success ? "Success" : "Failed"}</td>
                         <td>{o?.products?.length}</td>
                       </tr>
