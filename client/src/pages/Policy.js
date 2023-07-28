@@ -13,13 +13,11 @@ const Policy = () => {
           />
         </div>
         <div className="col-md-4 col-xs-12">
-          <p>add privacy policy</p>
-          <p>add privacy policy</p>
-          <p>add privacy policy</p>
-          <p>add privacy policy</p>
-          <p>add privacy policy</p>
-          <p>add privacy policy</p>
-          <p>add privacy policy</p>
+          <p>We do not share data with any third party promotional application.</p>
+          <p>We facilate the process of ordering food, however we do not take the 
+            responsibility for any difference from the items shown.
+          </p>
+          <p>For severe quality shortcomings, Contact us in the ways provided.</p>
         </div>
       </div>
     </Layout>

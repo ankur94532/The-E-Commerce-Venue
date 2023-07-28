@@ -14,12 +14,13 @@ const About = () => {
         </div>
         <div className="col-md-4 col-xs-12">
           <p className="text-justify mt-2 col-xs-12">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            officiis obcaecati esse tempore unde ratione, eveniet mollitia,
-            perferendis eius temporibus dicta blanditiis doloremque explicabo
-            quasi sunt vero optio cum aperiam vel consectetur! Laborum enim
-            accusantium atque, excepturi sapiente amet! Tenetur ducimus aut
-            commodi illum quidem neque tempora nam.
+            This Website has been made by Prakhar Singh, Shashwat Tripathi and Kanishk Srivastava,
+            3 Pre Final Year Students of IIT-(BHU). The website aims to streamline the whole process of ordering 
+            food from the various canteens in our college. We provide the functionality to provide you with the order history
+            for all your purchases and facilate your task of managing your expenses too.
+           </p>
+           <p>
+            So Sign up and Start Ordering Now !!
           </p>
         </div>
       </div>
