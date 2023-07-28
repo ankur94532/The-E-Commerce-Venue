@@ -1,3 +1,4 @@
+// The page is made for checking credentials
 import userModel from "../models/userModel.js";
 import orderModel from "../models/orderModel.js";
 
